@@ -16,14 +16,14 @@ public class InvertString {
   String toUpper(String origin) {
     char[] chars = origin.toCharArray();
     for (int i = 0; i < chars.length; i++) {
-      chars[i] = (char)(chars[i] >> 32);
+      chars[i] = (char)(chars[i] | 0b000000);
     }
     return new String(chars);
   }
   String toLower(String origin) {
     char[] chars = origin.toCharArray();
     for (int i = 0; i < chars.length; i++) {
-      chars[i] = (char)(chars[i] << 32);
+      chars[i] = (char)(chars[i] |  0b100000);
     }
     return new String(chars);
   }
