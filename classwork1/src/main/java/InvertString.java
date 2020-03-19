@@ -23,7 +23,7 @@ public class InvertString {
   String toLower(String origin) {
     char[] chars = origin.toCharArray();
     for (int i = 0; i < chars.length; i++) {
-      chars[i] = (char)(chars[i] >> 32);
+      chars[i] = (char)(chars[i] << 32);
     }
     return new String(chars);
   }
